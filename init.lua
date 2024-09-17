@@ -34,7 +34,8 @@ Plug('hrsh7th/vim-vsnip')  -- For snippet completion
 -- LSP configuration
 Plug('neovim/nvim-lspconfig')  -- Enables LSP
 vim.call('plug#end')
-
+-- Set lua path .config/nvim/lua
+package.path = package.path .. ';' .. vim.fn.stdpath('config') .. '/lua/?.lua'
 -- Source LSP and completion setup from external Lua file
 require('lsp_config')  -- This loads the configuration from the separate file
 
